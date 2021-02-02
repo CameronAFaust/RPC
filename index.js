@@ -11,12 +11,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-io.on('connection', (socket) => {
-  socket.on('selection', (msg) => {
-    console.log('selection: ' + msg);
+io.on('connection', async (socket) => {
+  socket.on('selection', (selection) => {
+    io.emit('selection', selection);
   });
 });
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
-});
+http.listen(3000);
