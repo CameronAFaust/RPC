@@ -8,7 +8,12 @@ function choiceSelected(option) {
 
 function lockIn() {
   if (selection) {
-    socket.emit('selection', selection);
+    const player = {
+      'id': socket.id,
+      'selection': selection
+    }
+    socket.emit('selection', player);
+
     selection = '';
   } else {
     // error out

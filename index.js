@@ -12,13 +12,10 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', async (socket) => {
-  // console.log(socket.id);
-
-  socket.on('selection', (msg) => {
-    io.emit('selection', msg);
+  socket.on('selection', (selection) => {
+    console.log(selection);
+    io.emit('selection', selection);
   });
 });
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
-});
+http.listen(3000);
