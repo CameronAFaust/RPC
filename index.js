@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 
 io.on('connection', async (socket) => {
   socket.on('selection', (selection) => {
-    console.log(selection);
     io.emit('selection', selection);
   });
 });
