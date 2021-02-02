@@ -11,9 +11,11 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-io.on('connection', (socket) => {
+io.on('connection', async (socket) => {
+  // console.log(socket.id);
+
   socket.on('selection', (msg) => {
-    console.log('selection: ' + msg);
+    io.emit('selection', msg);
   });
 });
 

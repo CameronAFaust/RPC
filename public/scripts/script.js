@@ -14,3 +14,7 @@ function lockIn() {
     // error out
   }
 }
+
+socket.on('selection', function(msg) {
+  console.log(msg);
+});
