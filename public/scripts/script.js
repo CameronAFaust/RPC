@@ -5,7 +5,7 @@ let selectionCount = 0;
 let playerCount = 0;
 let playersSelections = [];
 const player = {
-  'id': socket.id,
+  'id': "",
   'selection': "",
   'username': ""
 }
@@ -13,6 +13,7 @@ const player = {
 const submitUsername = () => {
   const username = document.getElementById("username_Entry_Field").value;
   player.username = username;
+  player.id = socket.id;
   document.getElementById('username_Section_Title_Waiting').style.display = 'block';
   document.getElementById('username_Input_Section').style.display = 'none';
   socket.emit('playerCreated');
