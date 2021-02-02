@@ -15,6 +15,9 @@ io.on('connection', async (socket) => {
   socket.on('selection', (selection) => {
     io.emit('selection', selection);
   });
+  socket.on('playerCreated', () => {
+    io.emit('playerCreated');
+  })
 });
 
 http.listen(3000);

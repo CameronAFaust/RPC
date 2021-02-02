@@ -11,10 +11,20 @@
 </head>
 
 <body>
-  <button onclick="choiceSelected('rock')" id="rock">Rock</button>
-  <button onclick="choiceSelected('paper')" id="paper">Paper</button>
-  <button onclick="choiceSelected('scissors')" id="scissors">Scissors</button>
-  <button onclick="lockIn()" id="lockIn">Lock In Choice</button>
+  <div id="username_Section">
+    <div id="username_Input_Section">
+      <h1 id="username_Section_Title">Please enter your username!</h1>
+      <input type="text" placeholder="Username" id="username_Entry_Field" />
+      <button onclick="submitUsername()" id="submit_Username">Submit</button>>
+    </div>
+    <h1 id="username_Section_Title_Waiting">Please wait while your opponent submits their username</h1>
+  </div>
+  <div id="gameSection">
+    <button onclick="choiceSelected('rock')" id="rock">Rock</button>
+    <button onclick="choiceSelected('paper')" id="paper">Paper</button>
+    <button onclick="choiceSelected('scissors')" id="scissors">Scissors</button>
+    <button onclick="lockIn()" id="lockIn">Lock In Choice</button>
+  </div>
 </body>
 
 </html>
